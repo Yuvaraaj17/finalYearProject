@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-data = pd.read_csv('data/archive/Train.csv')
+data = pd.read_csv('data/Train.csv')
 
 DataFrame = pd.DataFrame(data)
 length = len(DataFrame)
