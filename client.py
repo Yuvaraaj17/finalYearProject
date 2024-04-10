@@ -8,10 +8,12 @@ async def sending():
         result = model.predict(0,stream=True) #stream=True for Result generation
         for r in result:
             classnameTensor = r.boxes.cls #tensor type
-            classNumber = int(classnameTensor.item())
-            className = r.names[classNumber]
-            print("Result is:",className)
-            await websocket.send(className)
+            res =''
+            for i in classnameTensor:
+                classNumber = int(i.item())
+                className = r.names[classNumber]
+                res=res + f' {className}'
+            await websocket.send(res)
             await websocket.recv()
 async def main():
     await sending()
