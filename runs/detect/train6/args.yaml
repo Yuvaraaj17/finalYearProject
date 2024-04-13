@@ -2,7 +2,7 @@ task: detect
 mode: train
 model: yolov8n.yaml
 data: config.yaml
-epochs: 10
+epochs: 60
 time: null
 patience: 100
 batch: 16
@@ -11,7 +11,7 @@ save: true
 save_period: -1
 cache: false
 device: null
-workers: 8
+workers: 2
 project: null
 name: train6
 exist_ok: false
@@ -25,7 +25,7 @@ rect: false
 cos_lr: false
 close_mosaic: 10
 resume: false
-amp: true
+amp: false
 fraction: 1.0
 profile: false
 freeze: null
@@ -103,4 +103,4 @@ erasing: 0.4
 crop_fraction: 1.0
 cfg: null
 tracker: botsort.yaml
-save_dir: runs\detect\train6
+save_dir: D:\finalYearProject\runs\detect\train6
